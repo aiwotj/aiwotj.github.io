@@ -1,0 +1,371 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>next主题美化教程</title>
+    <url>/posts/dfc08360/</url>
+    <content><![CDATA[<p>在众多主题的中挑选了几个较为中意的主题，经过激烈的思想斗争之后，最终选择了next主题。next主题的简约风格是我比较喜欢的，经过几年的升级拥有较为成熟的经验，再加上使用的人数较多遇到问题时便于解决。next主题目前有三个版本，分别为5×× 6×× 7××。后两个新版本自带了很多新功能，使用起来很方便。因为不会换背景，就先用5.1.4的版本。</p>
+<a id="more"></a>
+<h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><ul>
+<li>_config.yml 配置文件  在myblog目录下、next目录下各有一个简称为博客配置文件，主题配置文件</li>
+<li>在visual中ctrl+f可打开搜索框 ctrl+s快速保存</li>
+<li>在修改配置文件时需注意格式</li>
+<li>如果是5.1.4版本最好安装方法一</li>
+</ul>
+<h2 id="启用文章标签分类"><a href="#启用文章标签分类" class="headerlink" title="启用文章标签分类"></a>启用文章标签分类</h2><p>打开主题配置文件,在需要的功能前面去掉# 保存 在myblog中启动Git bash here输入<code>hexo n page tags</code> <code>hexo n page categories</code> 其他功能如上</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">menu:</span><br><span class="line">  home: / || home</span><br><span class="line">  <span class="comment">#about: /about/ || user</span></span><br><span class="line">  tags: /tags/ || tags</span><br><span class="line">  categories: /categories/ || th</span><br><span class="line">  <span class="comment">#archives: /archives/ || archive</span></span><br><span class="line">  <span class="comment">#schedule: /schedule/ || calendar</span></span><br><span class="line">  <span class="comment">#sitemap: /sitemap.xml || sitemap</span></span><br><span class="line">  <span class="comment">#commonweal: /404/ || heartbeat</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="修改网站图标-名称-语言"><a href="#修改网站图标-名称-语言" class="headerlink" title="修改网站图标 名称 语言"></a>修改网站图标 名称 语言</h2><h3 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h3><p>找到合适的图片进行修改大小为16x16 32x32，格式为png,图片名字分别为favicon-16x16-next.png favicon-32x32-next.png 然后后打开next\source\images将已经修改的图片替换原有的图片</p>
+<h3 id="方法二"><a href="#方法二" class="headerlink" title="方法二"></a>方法二</h3><p>找到合适的图片进行修改大小为16x16 32x32，例如1.png 2.png 打开next\source\images将已经修改的图片放进去，打开主题配置文件将favicon-16x16-next.png favicon-32x32-next.png修改为1.png 2.png 保存退出</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">favicon:</span><br><span class="line">  small: /images/favicon-16x16-next.png</span><br><span class="line">  medium: /images/favicon-32x32-next.png</span><br><span class="line">  apple_touch_icon: /images/apple-touch-icon-next.png</span><br><span class="line">  safari_pinned_tab: /images/logo.svg</span><br><span class="line">  <span class="comment">#android_manifest: /images/manifest.json</span></span><br><span class="line">  <span class="comment">#ms_browserconfig: /images/browserconfig.xml</span></span><br></pre></td></tr></table></figure>
+<h3 id="修改名称-语言"><a href="#修改名称-语言" class="headerlink" title="修改名称 语言"></a>修改名称 语言</h3><p>打开博客配置文件,进行修改，</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Site</span></span><br><span class="line">title: 网站名称</span><br><span class="line">subtitle: </span><br><span class="line">description: 说明</span><br><span class="line">keywords: </span><br><span class="line">author: 博主名称</span><br><span class="line">language: zh-Hans</span><br><span class="line">timezone:</span><br></pre></td></tr></table></figure>
+
+<h2 id="设置不同主题风格"><a href="#设置不同主题风格" class="headerlink" title="设置不同主题风格"></a>设置不同主题风格</h2><p>打开主题配置文件,有四种风格可选，删除#表示选中，保存后可打开本地预览进行挑选</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Schemes</span></span><br><span class="line"><span class="comment">#scheme: Muse</span></span><br><span class="line"><span class="comment">#scheme: Mist</span></span><br><span class="line"><span class="comment">#scheme: Pisces</span></span><br><span class="line">scheme: Gemini</span><br></pre></td></tr></table></figure>
+
+<h2 id="添加头像"><a href="#添加头像" class="headerlink" title="添加头像"></a>添加头像</h2><p>打开next\source\images将头像放进去，例如1.jpg 打开主题配置文件,修改<code>avatar: /images/1.jpg</code></p>
+<h2 id="点击头像返回首页"><a href="#点击头像返回首页" class="headerlink" title="点击头像返回首页"></a>点击头像返回首页</h2><h3 id="方法一-1"><a href="#方法一-1" class="headerlink" title="方法一"></a>方法一</h3><ul>
+<li>当鼠标在头像的位置时，变为可点击。在<code>themes/next/layout/source/css/_common/componets/sidebar</code>文件夹下打开<code>sidebar-author.styl</code>文件，在<code>.site-author-image{}</code>内添加<code>cursor: pointer;</code><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">.site-author-image &#123;</span><br><span class="line">                     display: block;</span><br><span class="line">                     margin: 0 auto;</span><br><span class="line">                     padding: <span class="variable">$site</span>-author-image-padding;</span><br><span class="line">                     max-width: <span class="variable">$site</span>-author-image-width;</span><br><span class="line">                     height: <span class="variable">$site</span>-author-image-height;</span><br><span class="line">                     border: <span class="variable">$site</span>-author-image-border-width solid <span class="variable">$site</span>-author-image-border-color;</span><br><span class="line">                     cursor: pointer;</span><br><span class="line">                   &#125;</span><br></pre></td></tr></table></figure>
+在<code>themes/next/layout/source/js/src</code>文件夹下打开<code>motion.js</code>文件，在顶部添加代码：<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$(<span class="string">'.site-author-image'</span>).click(<span class="function"><span class="title">function</span></span>()&#123;</span><br><span class="line">      window.location.href=<span class="string">"自定义链接"</span>;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h3 id="方法二-1"><a href="#方法二-1" class="headerlink" title="方法二"></a>方法二</h3>打开<code>themes/next/layout/_macro/sidebar.swig</code> 在代码前后加上<code>&lt;a href=&quot;/&quot;&gt; &lt;/a&gt;</code> 如下<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">&lt;a href=<span class="string">"/"</span>&gt;</span><br><span class="line">  &lt;img class=<span class="string">"site-author-image"</span> itemprop=<span class="string">"image"</span></span><br><span class="line">       src=<span class="string">"&#123;&#123; url_for( theme.avatar | default(theme.images + '/avatar.gif') ) &#125;&#125;"</span></span><br><span class="line">       alt=<span class="string">"&#123;&#123; theme.author &#125;&#125;"</span> /&gt;</span><br><span class="line"> &lt;/a&gt;</span><br></pre></td></tr></table></figure>
+
+
+</li>
+</ul>
+<h2 id="网页上部显示fork-me-on-github"><a href="#网页上部显示fork-me-on-github" class="headerlink" title="网页上部显示fork me on github"></a>网页上部显示fork me on github</h2><h3 id="方法一-2"><a href="#方法一-2" class="headerlink" title="方法一"></a>方法一</h3><p>打开<a href="http://tholman.com/github-corners/" target="_blank" rel="noopener">猫头</a>或者<a href="https://github.blog/2008-12-19-github-ribbons/" target="_blank" rel="noopener">条带</a>选择自己想要的样式，完整复制后面的代码。打开<code>themes/next/layout/_layout.swig</code>文件中放在<code>&lt;div class=&quot;headband&quot;&gt;&lt;/div&gt;</code>的下面，并把a href=”<a href="https://your-url&quot;修改为a" target="_blank" rel="noopener">https://your-url&quot;修改为a</a> href=”<a href="https://github.com/用户名&quot;" target="_blank" rel="noopener">https://github.com/用户名&quot;</a></p>
+<h3 id="方法二-2"><a href="#方法二-2" class="headerlink" title="方法二"></a>方法二</h3><p>打开主题配置文件</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">github_banner:</span><br><span class="line">  <span class="built_in">enable</span>: <span class="literal">true</span></span><br><span class="line">  permalink: https://github.com/用户名</span><br><span class="line">  title: 可自定义提示内容</span><br></pre></td></tr></table></figure>
+
+<h2 id="添加背景图片"><a href="#添加背景图片" class="headerlink" title="添加背景图片"></a>添加背景图片</h2><p>在<code>theme/next/source/css/_custom</code>文件夹下打开<code>custom.styl</code>文件，<del>没有就自行创建</del>添加以下代码：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">body&#123;   </span><br><span class="line">        background:url(图片链接);</span><br><span class="line">        background-size:cover;        背景尺寸</span><br><span class="line">        background-repeat:no-repeat;  背景重复</span><br><span class="line">        background-attachment:fixed;  固定</span><br><span class="line">        background-position:center;   背景位置</span><br><span class="line">     &#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="添加动态背景"><a href="#添加动态背景" class="headerlink" title="添加动态背景"></a>添加动态背景</h2><p>在主题配置文件中找到如下代码，有四种不同的动态背景，将<code>false</code>改为<code>true</code>即可选中</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Canvas-nest</span></span><br><span class="line">canvas_nest: <span class="literal">false</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># three_waves</span></span><br><span class="line">three_waves: <span class="literal">false</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># canvas_lines</span></span><br><span class="line">canvas_lines: <span class="literal">false</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># canvas_sphere</span></span><br><span class="line">canvas_sphere: <span class="literal">false</span></span><br></pre></td></tr></table></figure>
+<p>在5.1.4以上的版本，可以更方便调整动态背景</p>
+<h2 id="隐藏网页底部powered-By-Hexo-强力驱动"><a href="#隐藏网页底部powered-By-Hexo-强力驱动" class="headerlink" title="隐藏网页底部powered By Hexo / 强力驱动"></a>隐藏网页底部powered By Hexo / 强力驱动</h2><h3 id="方法一-3"><a href="#方法一-3" class="headerlink" title="方法一"></a>方法一</h3><p>打开<code>themes/next/layout/_partials/footer.swig,</code>使用<!---->代码即可，或者直接删除。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">&lt;!--&#123;% <span class="keyword">if</span> theme.footer.powered %&#125;</span><br><span class="line">  &lt;div class=<span class="string">"powered-by"</span>&gt;&#123;<span class="comment">#</span></span><br><span class="line">  <span class="comment">#&#125;&#123;&#123; __('footer.powered', '&lt;a class="theme-link" target="_blank" href="https://hexo.io"&gt;Hexo&lt;/a&gt;') &#125;&#125;&#123;#</span></span><br><span class="line"><span class="comment">#&#125;&lt;/div&gt;</span></span><br><span class="line">&#123;% endif %&#125;</span><br><span class="line"></span><br><span class="line">&#123;% <span class="keyword">if</span> theme.footer.powered and theme.footer.theme.enable %&#125;</span><br><span class="line">  &lt;span class=<span class="string">"post-meta-divider"</span>&gt;|&lt;/span&gt;</span><br><span class="line">&#123;% endif %&#125;</span><br><span class="line"></span><br><span class="line">&#123;% <span class="keyword">if</span> theme.footer.theme.enable %&#125;</span><br><span class="line">  &lt;div class=<span class="string">"theme-info"</span>&gt;&#123;<span class="comment">#</span></span><br><span class="line">  <span class="comment">#&#125;&#123;&#123; __('footer.theme') &#125;&#125; &amp;mdash; &#123;#</span></span><br><span class="line">  <span class="comment">#&#125;&lt;a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next"&gt;&#123;#</span></span><br><span class="line">    <span class="comment">#&#125;NexT.&#123;&#123; theme.scheme &#125;&#125;&#123;#</span></span><br><span class="line">  <span class="comment">#&#125;&lt;/a&gt;&#123;% if theme.footer.theme.version %&#125; v&#123;&#123; theme.version &#125;&#125;&#123;% endif %&#125;&#123;#</span></span><br><span class="line"><span class="comment">#&#125;&lt;/div&gt;</span></span><br><span class="line">&#123;% endif %&#125;--&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="方法二-3"><a href="#方法二-3" class="headerlink" title="方法二"></a>方法二</h3><p>在5.1.4以上的版本，在主题配置文件找到如下代码将<code>true</code>全部修改为<code>false</code></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">powered:</span><br><span class="line">  <span class="comment"># Hexo link (Powered by Hexo).</span></span><br><span class="line">  <span class="built_in">enable</span>: <span class="literal">false</span></span><br><span class="line">  <span class="comment"># Version info of Hexo after Hexo link (vX.X.X).</span></span><br><span class="line">  version: <span class="literal">false</span></span><br><span class="line"></span><br><span class="line">theme:</span><br><span class="line">  <span class="comment"># Theme &amp; scheme info link (Theme - NexT.scheme).</span></span><br><span class="line">  <span class="built_in">enable</span>: <span class="literal">false</span></span><br><span class="line">  <span class="comment"># Version info of NexT after scheme info (vX.X.X).</span></span><br><span class="line">  version: <span class="literal">false</span></span><br></pre></td></tr></table></figure>
+
+
+<h2 id="主页文章添加阴影效果"><a href="#主页文章添加阴影效果" class="headerlink" title="主页文章添加阴影效果"></a>主页文章添加阴影效果</h2><p>打开<code>\themes\next\source\css\_custom\custom.styl</code>,添加如下代码,效果可自行调节</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">// 主页文章添加阴影效果</span><br><span class="line"> .post &#123;</span><br><span class="line">   margin-top: 60px;</span><br><span class="line">   margin-bottom: 60px;</span><br><span class="line">   padding: 25px;</span><br><span class="line">   -webkit-box-shadow: 0 0 5px rgba(202, 203, 203, .5);</span><br><span class="line">   -moz-box-shadow: 0 0 5px rgba(202, 203, 204, .5);</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="网站底部字数统计"><a href="#网站底部字数统计" class="headerlink" title="网站底部字数统计"></a>网站底部字数统计</h2><p>在博客根目录下，然后运行如下代码<code>$ npm install hexo-wordcount --save</code>然后在<code>/themes/next/layout/_partials/footer.swig</code>文件尾部添加如下代码</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">&lt;div class=<span class="string">"theme-info"</span>&gt;</span><br><span class="line">  &lt;div class=<span class="string">"powered-by"</span>&gt;&lt;/div&gt;</span><br><span class="line">  &lt;span class=<span class="string">"post-count"</span>&gt;博客全站共&#123;&#123; totalcount(site) &#125;&#125;字&lt;/span&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="文章字数统计功能"><a href="#文章字数统计功能" class="headerlink" title="文章字数统计功能"></a>文章字数统计功能</h2><ul>
+<li>在博客根目录下安装 hexo-wordcount,运行<code>npm install hexo-wordcount --save</code></li>
+<li>打开主题配置文件，代码如下<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">post_wordcount:</span><br><span class="line">  item_text: <span class="literal">true</span></span><br><span class="line">  wordcount: <span class="literal">true</span></span><br><span class="line">  min2read: <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+
+
+</li>
+</ul>
+<h2 id="添加顶部加载条"><a href="#添加顶部加载条" class="headerlink" title="添加顶部加载条"></a>添加顶部加载条</h2><p>打开主题配置文件(_config.yml)将<code>pace: false</code>改为<code>pace: true</code>，还可以换不同样式的加载条</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Progress bar in the top during page loading.</span></span><br><span class="line">pace: <span class="literal">true</span></span><br><span class="line"><span class="comment"># Themes list:</span></span><br><span class="line"><span class="comment">#pace-theme-big-counter</span></span><br><span class="line"><span class="comment">#pace-theme-bounce</span></span><br><span class="line"><span class="comment">#pace-theme-barber-shop</span></span><br><span class="line"><span class="comment">#pace-theme-center-atom</span></span><br><span class="line"><span class="comment">#pace-theme-center-circle</span></span><br><span class="line"><span class="comment">#pace-theme-center-radar</span></span><br><span class="line"><span class="comment">#pace-theme-center-simple</span></span><br><span class="line"><span class="comment">#pace-theme-corner-indicator</span></span><br><span class="line"><span class="comment">#pace-theme-fill-left</span></span><br><span class="line"><span class="comment">#pace-theme-flash</span></span><br><span class="line"><span class="comment">#pace-theme-loading-bar</span></span><br><span class="line"><span class="comment">#pace-theme-mac-osx</span></span><br><span class="line"><span class="comment">#pace-theme-minimal</span></span><br><span class="line"><span class="comment"># For example</span></span><br><span class="line"><span class="comment"># pace_theme: pace-theme-center-simple</span></span><br><span class="line">pace_theme: pace-theme-minimal</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="文章加密"><a href="#文章加密" class="headerlink" title="文章加密"></a>文章加密</h2><p>打开<code>themes/next/layout/_partials/head.swig</code>文件,在<code>&lt;script src=&quot;&quot;&gt;&lt;/script&gt;</code>下面添加如下代码</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">    (<span class="function"><span class="title">function</span></span> () &#123;</span><br><span class="line">        <span class="keyword">if</span> (<span class="string">'&#123;&#123; page.password &#125;&#125;'</span>) &#123;</span><br><span class="line">            <span class="keyword">if</span> (prompt(<span class="string">'请输入文章密码'</span>) !== <span class="string">'&#123;&#123; page.password &#125;&#125;'</span>) &#123;</span><br><span class="line">                alert(<span class="string">'密码错误！'</span>);</span><br><span class="line">                <span class="keyword">if</span> (history.length === 1) &#123;</span><br><span class="line">                    location.replace(<span class="string">"http://xxxxxxx.xxx"</span>); // 这里替换成你的首页</span><br><span class="line">                &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                    history.back();</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)();</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<p>需要修改博文开头格式如下</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">title: next主题美化教程</span><br><span class="line">tags: hexo</span><br><span class="line">categories: 博客</span><br><span class="line">password: 自定义密码</span><br><span class="line">date: 2019-08-28 13:13:07</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="博文置顶"><a href="#博文置顶" class="headerlink" title="博文置顶"></a>博文置顶</h2><p>打开<code>node_modules/hexo-generator-index/lib/generator.js</code>用如下代码替换原有的全部代码</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="string">'use strict'</span>;</span><br><span class="line">var pagination = require(<span class="string">'hexo-pagination'</span>);</span><br><span class="line">module.exports = <span class="keyword">function</span>(locals)&#123;</span><br><span class="line">  var config = this.config;</span><br><span class="line">  var posts = locals.posts;</span><br><span class="line">    posts.data = posts.data.sort(<span class="keyword">function</span>(a, b) &#123;</span><br><span class="line">        <span class="keyword">if</span>(a.top &amp;&amp; b.top) &#123; // 两篇文章top都有定义</span><br><span class="line">            <span class="keyword">if</span>(a.top == b.top) <span class="built_in">return</span> b.date - a.date; // 若top值一样则按照文章日期降序排</span><br><span class="line">            <span class="keyword">else</span> <span class="built_in">return</span> b.top - a.top; // 否则按照top值降序排</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(a.top &amp;&amp; !b.top) &#123; // 以下是只有一篇文章top有定义，那么将有top的排在前面</span><br><span class="line">            <span class="built_in">return</span> -1;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(!a.top &amp;&amp; b.top) &#123;</span><br><span class="line">            <span class="built_in">return</span> 1;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="built_in">return</span> b.date - a.date; // 都没定义按照文章日期降序排</span><br><span class="line">    &#125;);</span><br><span class="line">  var paginationDir = config.pagination_dir || <span class="string">'page'</span>;</span><br><span class="line">  <span class="built_in">return</span> pagination(<span class="string">''</span>, posts, &#123;</span><br><span class="line">    perPage: config.index_generator.per_page,</span><br><span class="line">    layout: [<span class="string">'index'</span>, <span class="string">'archive'</span>],</span><br><span class="line">    format: paginationDir + <span class="string">'/%d/'</span>,</span><br><span class="line">    data: &#123;</span><br><span class="line">      __index: <span class="literal">true</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>需要修改博文开头格式如下</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">title: next主题美化教程</span><br><span class="line">tags: hexo</span><br><span class="line">categories: 博客</span><br><span class="line">password: 自定义密码</span><br><span class="line">top: 100         // 数值越大排名越靠前</span><br><span class="line">date: 2019-08-28 13:13:07</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="调整字体大小"><a href="#调整字体大小" class="headerlink" title="调整字体大小"></a>调整字体大小</h2><p>打开<code>\themes\next\source\css\ _variables\base.styl</code>文件，找到$font-size-base，自行调整数值</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">// Font size</span><br><span class="line"><span class="variable">$font</span>-size-base           = (hexo-config(<span class="string">'font.enable'</span>) and hexo-config(<span class="string">'font.global.size'</span>) is a <span class="string">'unit'</span>) ? unit(hexo-config(<span class="string">'font.global.size'</span>), em) : 1em;</span><br><span class="line"><span class="variable">$font</span>-size-smallest       = 0.75em;</span><br><span class="line"><span class="variable">$font</span>-size-smaller        = 0.8em;</span><br><span class="line"><span class="variable">$font</span>-size-small          = 0.87em;</span><br><span class="line"><span class="variable">$font</span>-size-medium         = 1.0em;</span><br><span class="line"><span class="variable">$font</span>-size-large          = 1.0em;</span><br><span class="line"><span class="variable">$font</span>-size-larger         = 1.0em;</span><br><span class="line"><span class="variable">$font</span>-size-largest        = 1.0em;</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="添加RSS"><a href="#添加RSS" class="headerlink" title="添加RSS"></a>添加RSS</h2><ul>
+<li>在博客目录执行<code>npm install --save hexo-generator-feed</code></li>
+<li>修改博客配置文件<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Extensions</span></span><br><span class="line"><span class="comment">## Plugins: http://hexo.io/plugins/</span></span><br><span class="line">plugins: hexo-generate-feed</span><br></pre></td></tr></table></figure></li>
+<li>修改主题配置文件<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Set rss to false to disable feed link.</span></span><br><span class="line"><span class="comment"># Leave rss as empty to use site's feed link.</span></span><br><span class="line"><span class="comment"># Set rss to specific value if you have burned your feed already.</span></span><br><span class="line">rss: /atom.xml</span><br></pre></td></tr></table></figure>
+
+
+</li>
+</ul>
+<h2 id="添加鼠标点击效果"><a href="#添加鼠标点击效果" class="headerlink" title="添加鼠标点击效果"></a>添加鼠标点击效果</h2><p>在<code>themes/next/source/js/src</code>新建一个<code>fireworks.js</code>，添加如下代码</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="string">"use strict"</span>;<span class="keyword">function</span> updateCoords(e)&#123;pointerX=(e.clientX||e.touches[0].clientX)-canvasEl.getBoundingClientRect().left,pointerY=e.clientY||e.touches[0].clientY-canvasEl.getBoundingClientRect().top&#125;<span class="keyword">function</span> setParticuleDirection(e)&#123;var t=anime.random(0,360)*Math.PI/180,a=anime.random(50,180),n=[-1,1][anime.random(0,1)]*a;<span class="built_in">return</span>&#123;x:e.x+n*Math.cos(t),y:e.y+n*Math.sin(t)&#125;&#125;<span class="keyword">function</span> createParticule(e,t)&#123;var a=&#123;&#125;;<span class="built_in">return</span> a.x=e,a.y=t,a.color=colors[anime.random(0,colors.length-1)],a.radius=anime.random(16,32),a.endPos=setParticuleDirection(a),a.draw=<span class="function"><span class="title">function</span></span>()&#123;ctx.beginPath(),ctx.arc(a.x,a.y,a.radius,0,2*Math.PI,!0),ctx.fillStyle=a.color,ctx.fill()&#125;,a&#125;<span class="keyword">function</span> createCircle(e,t)&#123;var a=&#123;&#125;;<span class="built_in">return</span> a.x=e,a.y=t,a.color=<span class="string">"#F00"</span>,a.radius=0.1,a.alpha=0.5,a.lineWidth=6,a.draw=<span class="function"><span class="title">function</span></span>()&#123;ctx.globalAlpha=a.alpha,ctx.beginPath(),ctx.arc(a.x,a.y,a.radius,0,2*Math.PI,!0),ctx.lineWidth=a.lineWidth,ctx.strokeStyle=a.color,ctx.stroke(),ctx.globalAlpha=1&#125;,a&#125;<span class="keyword">function</span> renderParticule(e)&#123;<span class="keyword">for</span>(var t=0;t&lt;e.animatables.length;t++)&#123;e.animatables[t].target.draw()&#125;&#125;<span class="keyword">function</span> animateParticules(e,t)&#123;<span class="keyword">for</span>(var a=createCircle(e,t),n=[],i=0;i&lt;numberOfParticules;i++)&#123;n.push(createParticule(e,t))&#125;anime.timeline().add(&#123;targets:n,x:<span class="keyword">function</span>(e)&#123;<span class="built_in">return</span> e.endPos.x&#125;,y:<span class="keyword">function</span>(e)&#123;<span class="built_in">return</span> e.endPos.y&#125;,radius:0.1,duration:anime.random(1200,1800),easing:<span class="string">"easeOutExpo"</span>,update:renderParticule&#125;).add(&#123;targets:a,radius:anime.random(80,160),lineWidth:0,alpha:&#123;value:0,easing:<span class="string">"linear"</span>,duration:anime.random(600,800)&#125;,duration:anime.random(1200,1800),easing:<span class="string">"easeOutExpo"</span>,update:renderParticule,offset:0&#125;)&#125;<span class="keyword">function</span> debounce(e,t)&#123;var a;<span class="built_in">return</span> <span class="function"><span class="title">function</span></span>()&#123;var n=this,i=arguments;clearTimeout(a),a=setTimeout(<span class="function"><span class="title">function</span></span>()&#123;e.apply(n,i)&#125;,t)&#125;&#125;var canvasEl=document.querySelector(<span class="string">".fireworks"</span>);<span class="keyword">if</span>(canvasEl)&#123;var ctx=canvasEl.getContext(<span class="string">"2d"</span>),numberOfParticules=30,pointerX=0,pointerY=0,tap=<span class="string">"mousedown"</span>,colors=[<span class="string">"#FF1461"</span>,<span class="string">"#18FF92"</span>,<span class="string">"#5A87FF"</span>,<span class="string">"#FBF38C"</span>],setCanvasSize=debounce(<span class="function"><span class="title">function</span></span>()&#123;canvasEl.width=2*window.innerWidth,canvasEl.height=2*window.innerHeight,canvasEl.style.width=window.innerWidth+<span class="string">"px"</span>,canvasEl.style.height=window.innerHeight+<span class="string">"px"</span>,canvasEl.getContext(<span class="string">"2d"</span>).scale(2,2)&#125;,500),render=anime(&#123;duration:1/0,update:<span class="function"><span class="title">function</span></span>()&#123;ctx.clearRect(0,0,canvasEl.width,canvasEl.height)&#125;&#125;);document.addEventListener(tap,<span class="keyword">function</span>(e)&#123;<span class="string">"sidebar"</span>!==e.target.id&amp;&amp;<span class="string">"toggle-sidebar"</span>!==e.target.id&amp;&amp;<span class="string">"A"</span>!==e.target.nodeName&amp;&amp;<span class="string">"IMG"</span>!==e.target.nodeName&amp;&amp;(render.play(),updateCoords(e),animateParticules(pointerX,pointerY))&#125;,!1),setCanvasSize(),window.addEventListener(<span class="string">"resize"</span>,setCanvasSize,!1)&#125;<span class="string">"use strict"</span>;<span class="keyword">function</span> updateCoords(e)&#123;pointerX=(e.clientX||e.touches[0].clientX)-canvasEl.getBoundingClientRect().left,pointerY=e.clientY||e.touches[0].clientY-canvasEl.getBoundingClientRect().top&#125;<span class="keyword">function</span> setParticuleDirection(e)&#123;var t=anime.random(0,360)*Math.PI/180,a=anime.random(50,180),n=[-1,1][anime.random(0,1)]*a;<span class="built_in">return</span>&#123;x:e.x+n*Math.cos(t),y:e.y+n*Math.sin(t)&#125;&#125;<span class="keyword">function</span> createParticule(e,t)&#123;var a=&#123;&#125;;<span class="built_in">return</span> a.x=e,a.y=t,a.color=colors[anime.random(0,colors.length-1)],a.radius=anime.random(16,32),a.endPos=setParticuleDirection(a),a.draw=<span class="function"><span class="title">function</span></span>()&#123;ctx.beginPath(),ctx.arc(a.x,a.y,a.radius,0,2*Math.PI,!0),ctx.fillStyle=a.color,ctx.fill()&#125;,a&#125;<span class="keyword">function</span> createCircle(e,t)&#123;var a=&#123;&#125;;<span class="built_in">return</span> a.x=e,a.y=t,a.color=<span class="string">"#F00"</span>,a.radius=0.1,a.alpha=0.5,a.lineWidth=6,a.draw=<span class="function"><span class="title">function</span></span>()&#123;ctx.globalAlpha=a.alpha,ctx.beginPath(),ctx.arc(a.x,a.y,a.radius,0,2*Math.PI,!0),ctx.lineWidth=a.lineWidth,ctx.strokeStyle=a.color,ctx.stroke(),ctx.globalAlpha=1&#125;,a&#125;<span class="keyword">function</span> renderParticule(e)&#123;<span class="keyword">for</span>(var t=0;t&lt;e.animatables.length;t++)&#123;e.animatables[t].target.draw()&#125;&#125;<span class="keyword">function</span> animateParticules(e,t)&#123;<span class="keyword">for</span>(var a=createCircle(e,t),n=[],i=0;i&lt;numberOfParticules;i++)&#123;n.push(createParticule(e,t))&#125;anime.timeline().add(&#123;targets:n,x:<span class="keyword">function</span>(e)&#123;<span class="built_in">return</span> e.endPos.x&#125;,y:<span class="keyword">function</span>(e)&#123;<span class="built_in">return</span> e.endPos.y&#125;,radius:0.1,duration:anime.random(1200,1800),easing:<span class="string">"easeOutExpo"</span>,update:renderParticule&#125;).add(&#123;targets:a,radius:anime.random(80,160),lineWidth:0,alpha:&#123;value:0,easing:<span class="string">"linear"</span>,duration:anime.random(600,800)&#125;,duration:anime.random(1200,1800),easing:<span class="string">"easeOutExpo"</span>,update:renderParticule,offset:0&#125;)&#125;<span class="keyword">function</span> debounce(e,t)&#123;var a;<span class="built_in">return</span> <span class="function"><span class="title">function</span></span>()&#123;var n=this,i=arguments;clearTimeout(a),a=setTimeout(<span class="function"><span class="title">function</span></span>()&#123;e.apply(n,i)&#125;,t)&#125;&#125;var canvasEl=document.querySelector(<span class="string">".fireworks"</span>);<span class="keyword">if</span>(canvasEl)&#123;var ctx=canvasEl.getContext(<span class="string">"2d"</span>),numberOfParticules=30,pointerX=0,pointerY=0,tap=<span class="string">"mousedown"</span>,colors=[<span class="string">"#FF1461"</span>,<span class="string">"#18FF92"</span>,<span class="string">"#5A87FF"</span>,<span class="string">"#FBF38C"</span>],setCanvasSize=debounce(<span class="function"><span class="title">function</span></span>()&#123;canvasEl.width=2*window.innerWidth,canvasEl.height=2*window.innerHeight,canvasEl.style.width=window.innerWidth+<span class="string">"px"</span>,canvasEl.style.height=window.innerHeight+<span class="string">"px"</span>,canvasEl.getContext(<span class="string">"2d"</span>).scale(2,2)&#125;,500),render=anime(&#123;duration:1/0,update:<span class="function"><span class="title">function</span></span>()&#123;ctx.clearRect(0,0,canvasEl.width,canvasEl.height)&#125;&#125;);document.addEventListener(tap,<span class="keyword">function</span>(e)&#123;<span class="string">"sidebar"</span>!==e.target.id&amp;&amp;<span class="string">"toggle-sidebar"</span>!==e.target.id&amp;&amp;<span class="string">"A"</span>!==e.target.nodeName&amp;&amp;<span class="string">"IMG"</span>!==e.target.nodeName&amp;&amp;(render.play(),updateCoords(e),animateParticules(pointerX,pointerY))&#125;,!1),setCanvasSize(),window.addEventListener(<span class="string">"resize"</span>,setCanvasSize,!1)&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>打开<code>themes/next/layout/_layout.swig</code>,在</body>上面写下如下代码<br>``bash</p>
+
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">打开主题配置文件，在结尾添加如下代码</span><br><span class="line">&#96;&#96;&#96;bash</span><br><span class="line"># Fireworks</span><br><span class="line">fireworks: true</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="网站底部显示访问量"><a href="#网站底部显示访问量" class="headerlink" title="网站底部显示访问量"></a>网站底部显示访问量</h2><p>打开主题配置文件，修改如下代码</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">busuanzi_count:</span><br><span class="line">  <span class="comment"># count values only if the other configs are false</span></span><br><span class="line">  <span class="built_in">enable</span>: ture</span><br><span class="line">  <span class="comment"># custom uv span for the whole site</span></span><br><span class="line">  site_uv: <span class="literal">true</span></span><br><span class="line">  site_uv_header: 本站访客数 &lt;i class=<span class="string">"fa fa-user"</span>&gt;&lt;/i&gt;</span><br><span class="line">  site_uv_footer: 次</span><br><span class="line">  <span class="comment"># custom pv span for the whole site</span></span><br><span class="line">  site_pv: <span class="literal">true</span></span><br><span class="line">  site_pv_header: 本站总访问量 &lt;i class=<span class="string">"fa fa-eye"</span>&gt;&lt;/i&gt;</span><br><span class="line">  site_pv_footer: 次</span><br><span class="line">  <span class="comment"># custom pv span for one page only</span></span><br><span class="line">  page_pv: <span class="literal">true</span></span><br><span class="line">  page_pv_header: 本文总阅读量 &lt;i class=<span class="string">"fa fa-file-o"</span>&gt;&lt;/i&gt;</span><br><span class="line">  page_pv_footer: 次</span><br></pre></td></tr></table></figure>
+<p>后来因为不蒜子更换域名，需进行下步操作（5.1.4版本以上请忽略）<br>打开<code>\next\layout_third-party\analytics</code>下的 <code>busuanzi-counter.swig</code>修改不蒜子的域名如下</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">&lt;script async src=<span class="string">"//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"</span>&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="自定义代码块样式"><a href="#自定义代码块样式" class="headerlink" title="自定义代码块样式"></a>自定义代码块样式</h2><p>打开<code>\themes\next\source\css\_custom\custom.styl</code>,添加如下代码</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">// Custom styles.</span><br><span class="line">code &#123;</span><br><span class="line">    color: <span class="comment">#ff7600;</span></span><br><span class="line">    background: <span class="comment">#fbf7f8;</span></span><br><span class="line">    margin: 2px;</span><br><span class="line">&#125;</span><br><span class="line">// 大代码块的自定义样式</span><br><span class="line">.highlight, pre &#123;</span><br><span class="line">    margin: 5px 0;</span><br><span class="line">    padding: 5px;</span><br><span class="line">    border-radius: 3px;</span><br><span class="line">&#125;</span><br><span class="line">.highlight, code, pre &#123;</span><br><span class="line">    border: 1px solid <span class="comment">#d6d6d6;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="浏览页面的时候显示当前浏览进度"><a href="#浏览页面的时候显示当前浏览进度" class="headerlink" title="浏览页面的时候显示当前浏览进度"></a>浏览页面的时候显示当前浏览进度</h2><p>打开主题配置文件,搜索关键字<code>scrollpercent</code>,把<code>false</code>改为<code>true</code></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Scroll percent label in b2t button</span></span><br><span class="line">scrollpercent: <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+<p>如果想把top按钮放在侧边栏,打开主题配置文件,搜索关键字b2t,把<code>false</code>改为<code>true</code></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Back to top in sidebar</span></span><br><span class="line"> b2t: <span class="literal">true</span></span><br><span class="line"> <span class="comment"># Scroll percent label in b2t button</span></span><br><span class="line"> scrollpercent: <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+
+
+<h2 id="next7-css失效解决方法"><a href="#next7-css失效解决方法" class="headerlink" title="next7 css失效解决方法"></a>next7 css失效解决方法</h2><p>仔细看主题配置文件的1~35行，如果已经自行在css目录下创建_custom目录，打开<code>\themes\next-reloaded\source\css\main.styl</code>在尾部添加</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F;My Layer</span><br><span class="line">&#x2F;&#x2F;--------------------------------------------------</span><br><span class="line">@import &quot;_custom&#x2F;custom.styl&quot;;</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>博客</category>
+      </categories>
+      <tags>
+        <tag>next</tag>
+        <tag>hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>hexo的简单配置（小白向）</title>
+    <url>/posts/1cbb3a73/</url>
+    <content><![CDATA[<p>博客的第一步已经完成，下一步的目标是美化，调整博客使其更方便，个性化。同时也便于博客的更新和后期维护，迁移等等。本篇主要讲述hexo博客的一些基础设置以及简单介绍主题的作用和更换。（个人编辑难免疏漏如果发现错误请指正）</p>
+<a id="more"></a>
+<h2 id="hexo的基本命令和配置文件的介绍"><a href="#hexo的基本命令和配置文件的介绍" class="headerlink" title="hexo的基本命令和配置文件的介绍"></a>hexo的基本命令和配置文件的介绍</h2><h3 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h3><ol>
+<li><code>hexo n 博客标题</code> 生成一篇新的博客</li>
+<li><code>hexo g</code>         生成静态网页</li>
+<li><code>hexo s</code>         启动本地预览</li>
+<li><code>hexo d</code>         将博客部署到远端</li>
+<li><code>hexo clean</code>     清除缓存，保证网页正常，一般情况不需要，但建议使用<h3 id="不常用命令"><a href="#不常用命令" class="headerlink" title="不常用命令"></a>不常用命令</h3></li>
+<li><code>hexo init</code>               将hexo安装至指定目录</li>
+<li><code>hexo -v</code>                 查询hexo的版本号</li>
+<li><code>hexo s -p 自定义端口</code>     通过localhost：自定义端口 访问</li>
+<li><code>hexo g -d</code>               组合命令，生成静态网页并将博客部署到远端</li>
+<li><code>hexo g -w</code>               组合命令，监视文件更改</li>
+<li><code>hexo new page 自定义文字</code> 创建新的页面，例如分类页 标签页等等</li>
+<li><code>hexo --safe</code>             安全模式</li>
+<li><code>hexo --debug</code>            调试模式</li>
+<li><code>hexo --silent</code>           简洁模式</li>
+<li><code>hexo migrate</code>           迁移博客</li>
+<li><code>hexo new draft 博客标题</code>创建草稿</li>
+<li><code>hexo list</code>             显示网站资料<h3 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h3>即博客目录下的各个文件夹的功能</li>
+</ol>
+<ul>
+<li>node_modules  依赖的环境</li>
+<li>public        生成的网站</li>
+<li>scaffolds     生成页面的模板</li>
+<li>source        生成的博客文章</li>
+<li>themes        主题</li>
+<li>_config.yml   博客的配置文件与主题的配置文件名字相同主要不要搞混</li>
+<li>scripts       自定义脚本（需自己创建）</li>
+</ul>
+<h2 id="修改（翻译）hexo配置文件"><a href="#修改（翻译）hexo配置文件" class="headerlink" title="修改（翻译）hexo配置文件"></a>修改（翻译）hexo配置文件</h2><p><strong>特别注意<code>:</code>必须加空格不然运行命令时会报错</strong><a href="">详细内容</a></p>
+<h3 id="修改网站名字，设置中文，设置时区"><a href="#修改网站名字，设置中文，设置时区" class="headerlink" title="修改网站名字，设置中文，设置时区"></a>修改网站名字，设置中文，设置时区</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Site</span></span><br><span class="line">title:        网站名字</span><br><span class="line">subtitle:     字幕</span><br><span class="line">description:  网站的说明</span><br><span class="line">keywords:     网站关键词</span><br><span class="line">author:       自己的博客名字</span><br><span class="line">language: zh-Hans</span><br><span class="line">timezone:     时区 hexo默认是电脑的时区无其它需求可不用更改</span><br></pre></td></tr></table></figure>
+<h3 id="设置博客网址以及文章永久链接格式"><a href="#设置博客网址以及文章永久链接格式" class="headerlink" title="设置博客网址以及文章永久链接格式"></a>设置博客网址以及文章永久链接格式</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># URL</span></span><br><span class="line"><span class="comment">## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'</span></span><br><span class="line">url: https://用户名.github.io          博客网址</span><br><span class="line">root: /                               网站根目录</span><br><span class="line">permalink: :year/:month/:day/:title/  文章的永久链接格式可按喜好更改</span><br><span class="line">permalink_defaults:                   永久链接中各部分的默认值</span><br></pre></td></tr></table></figure>
+
+<h3 id="我也不知道这是什么东西（￣-￣）"><a href="#我也不知道这是什么东西（￣-￣）" class="headerlink" title="我也不知道这是什么东西（￣.￣）"></a>我也不知道这是什么东西（￣.￣）</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Directory</span></span><br><span class="line">source_dir: <span class="built_in">source</span>         来源</span><br><span class="line">public_dir: public         公共</span><br><span class="line">tag_dir: tags              标签</span><br><span class="line">archive_dir: archives      存档目录 </span><br><span class="line">category_dir: categories   类别</span><br><span class="line">code_dir: downloads/code   代码目录</span><br><span class="line">i18n_dir: lang               </span><br><span class="line">skip_render: README.md     暂不介绍后期介绍</span><br></pre></td></tr></table></figure>
+
+<h3 id="博文的设置"><a href="#博文的设置" class="headerlink" title="博文的设置"></a>博文的设置</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Writing</span></span><br><span class="line">new_post_name: :year/:month/:day/:title.md <span class="comment"># File name of new posts 文章的文件名</span></span><br><span class="line">default_layout: post                                                默认布局可更换为pape或者draft</span><br><span class="line">titlecase: <span class="literal">false</span> <span class="comment"># Transform title into titlecase                   将标题转换为标题栏</span></span><br><span class="line">external_link: <span class="literal">true</span> <span class="comment"># Open external links in new tab                在新选项卡中打开外部链接</span></span><br><span class="line">filename_case: 0                                                    文件名是否大写</span><br><span class="line">render_drafts: <span class="literal">false</span>                                                显示草稿</span><br><span class="line">post_asset_folder: <span class="literal">false</span>                                            发布相应文件夹</span><br><span class="line">relative_link: <span class="literal">false</span>                                                相对链接</span><br><span class="line">future: <span class="literal">true</span>                                                        </span><br><span class="line">highlight:                                                          突出</span><br><span class="line">  <span class="built_in">enable</span>: <span class="literal">true</span>                                                      </span><br><span class="line">  line_number: <span class="literal">true</span>                                                 行号</span><br><span class="line">  auto_detect: <span class="literal">false</span>                                                自动检测</span><br><span class="line">  tab_replace:                                                      制表符替换</span><br></pre></td></tr></table></figure>
+
+<h3 id="主页设置"><a href="#主页设置" class="headerlink" title="主页设置"></a>主页设置</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Home page setting                                             主页设置</span></span><br><span class="line"><span class="comment"># path: Root path for your blogs index page. (default = '')     博客引索页的根路径（默认值=''）</span></span><br><span class="line"><span class="comment"># per_page: Posts displayed per page. (0 = disable pagination)  每页显示的文章（0=禁用分页）</span></span><br><span class="line"><span class="comment"># order_by: Posts order. (Order by date descending by default)  发布订单（默认情况下按日期降序）</span></span><br><span class="line">index_generator:                                                索引生成器</span><br><span class="line">  path: <span class="string">''</span>                                                      路径</span><br><span class="line">  per_page: 10                                                  每页：10</span><br><span class="line">  order_by: -date                                               选择日期</span><br></pre></td></tr></table></figure>
+
+<h3 id="类别，时间格式，分页"><a href="#类别，时间格式，分页" class="headerlink" title="类别，时间格式，分页"></a>类别，时间格式，分页</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Category &amp; Tag                                         类别和标记</span></span><br><span class="line">default_category: uncategorized                          默认类别：未分类</span><br><span class="line">category_map:                                            类别图</span><br><span class="line">tag_map:                                                 标签图</span><br><span class="line"></span><br><span class="line"><span class="comment"># Date / Time format                                     日期/时间格式</span></span><br><span class="line"><span class="comment">## Hexo uses Moment.js to parse and display date         Hexo使用moment.js解析和显示日期</span></span><br><span class="line"><span class="comment">## You can customize the date format as defined in       您可以自定义中定义的日期格式</span></span><br><span class="line"><span class="comment">## http://momentjs.com/docs/#/displaying/format/         http://momentjs.com/docs//显示/格式/</span></span><br><span class="line">date_format: YYYY-MM-DD                                  日期格式：YYYY-MM-DD</span><br><span class="line">time_format: HH:mm:ss                                    时间格式：hh:mm:ss</span><br><span class="line"></span><br><span class="line"><span class="comment"># Pagination                                             分页</span></span><br><span class="line"><span class="comment">## Set per_page to 0 to disable pagination               将每页设置为0以禁用分页</span></span><br><span class="line">per_page: 10                                             每页：10</span><br><span class="line">pagination_dir: page                                     分页目录：第页</span><br></pre></td></tr></table></figure>
+
+<h3 id="更换主题"><a href="#更换主题" class="headerlink" title="更换主题"></a>更换主题</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Extensions                                           扩展</span></span><br><span class="line"><span class="comment">## Plugins: https://hexo.io/plugins/                   插件</span></span><br><span class="line"><span class="comment">## Themes: https://hexo.io/themes/                     主题</span></span><br><span class="line">theme: landscape 1.将主题文件夹放在themes目录下</span><br><span class="line">                 2.将landscape改为主题文件夹的名字 一定要注意空格</span><br><span class="line">                 3.保存修改后的参数</span><br></pre></td></tr></table></figure>
+
+<h3 id="部署设置"><a href="#部署设置" class="headerlink" title="部署设置"></a>部署设置</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Deployment                                           已介绍</span></span><br><span class="line"><span class="comment">## Docs: https://hexo.io/docs/deployment.html          </span></span><br><span class="line">deploy:                                                </span><br><span class="line"> <span class="built_in">type</span>: git</span><br><span class="line"> repo: 仓库https地址</span><br><span class="line"> branch: master</span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="主题的介绍"><a href="#主题的介绍" class="headerlink" title="主题的介绍"></a>主题的介绍</h2><ul>
+<li>主题不是非换不可，如果你喜欢默认主题可以不换</li>
+<li><strong>下面均用next主题v5.1.4作为例子</strong></li>
+<li>主题可去<a href="https://theme-next.org" target="_blank" rel="noopener">官网</a>选择或者<a href="https://github.com/" target="_blank" rel="noopener">github</a>上面选择（当然还可以去购买定制，有能力的可以自己做(^_−)☆）。关于主题建议小白选择成熟的主题使用，一旦遇到问题可以很方便的从<a href="https://www.csdn.net" target="_blank" rel="noopener">网上</a>找到解决方法。推荐使用<a href="https://github.com/iissnan/hexo-theme-next/tree/v5.1.4" target="_blank" rel="noopener">next主题</a>，<a href="https://github.com/litten/hexo-theme-yilia" target="_blank" rel="noopener">Yilia主题</a>等等。</li>
+<li>在选定想要的主题后可以通过两种方式下载：①克隆仓库②下载zip</li>
+<li>克隆仓库 这种方法比较简单 命令为分步进行<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> myblog</span><br><span class="line">git <span class="built_in">clone</span> https://github.com/iissnan/hexo-theme-next themes/next</span><br></pre></td></tr></table></figure></li>
+<li>下载zip 进入github托管的项目后→Clone or download→Download zip 下载完成后将主题文件解压至themes目录下，把主题文件夹名字改为next</li>
+<li>不管用哪一种方法只要把主题文件放至themes目录就行，打开_config.yml 找到如下代码<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># Extensions</span><br><span class="line">## Plugins: https:&#x2F;&#x2F;hexo.io&#x2F;plugins&#x2F;</span><br><span class="line">## Themes: https:&#x2F;&#x2F;hexo.io&#x2F;themes&#x2F;</span><br><span class="line">theme: landscape                        1.将主题文件夹放在themes目录下</span><br><span class="line">                                        2.将landscape改为主题文件夹的名字 一定要注意空格</span><br><span class="line">                                        3.保存修改后的参数</span><br></pre></td></tr></table></figure></li>
+<li>在hexo目录下打开Git bash here 依次输入 <code>hexo clean</code> <code>hexo g</code> <code>hexo s</code> 在浏览器内打开<a href="http://localhost:4000" target="_blank" rel="noopener">http://localhost:4000</a> 查看效果</li>
+</ul>
+]]></content>
+      <categories>
+        <category>博客</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>七月</title>
+    <url>/posts/ea16/</url>
+    <content><![CDATA[<p>马上更新</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>金立F100L折腾记录</title>
+    <url>/posts/70f368f7/</url>
+    <content><![CDATA[<p>最近家里空出来一个几年前的手机，广告满天飞，apk可以自动下载89个之多，通知栏永远都有4个关不掉的通知，在连上wifi之后没有点任何东西，从设置返回之后居然弹出来一个安装界面，想进文件管理看一下，还需要先看5秒的广告。果然下限就是用来突破的</p>
+<a id="more"></a>
+
+<p>不知道是不是金立后台的问题，还是有什么神奇的小软件（在360n5s中过几天系统自动会下载一个com.android.bclearservice无限弹广告，在一个没有广告的app开始界面加上3秒广告，刚想说这个app没良心，再一想不对啊，360真的厉害）。继续说这个f100,因为手机卡的要死，就懒得去查广告出现的原因，直接关机进recovery想双清一下，按着手机音量键和关机键，选择recovery  确定  久违的小机器人出现了，带着无命令三个字出现了，(～￣▽￣)～  在下佩服，技不如人，愿赌服输，告辞！</p>
+<p>最后在设置里面恢复出厂，本想安安静静的结束。连上wifi，通知有几条更新软件的，重点是可以关掉，打开浏览器无限弹出安全证书有问题，换上via可以用了，系统自带的可以扔了。然后系统桌面突然抽风，一点屏幕就黑屏，这是向光能手电筒致敬吗？？重启大法好，也算勉强可以玩一下，1+16的内存，玩GAL毫无压力，3.5mm的耳机孔简直完美。</p>
+<p>越看应用商店，安全中心越感觉不顺眼，root一下吧。电脑上kingroot官网变成危险网站，chrome不让进，就随便找了一些root软件，结果都是不支持该机型，简单的方法果然不行。淦 刷rec反正原装都已经坏了，打开TWPR官网，金立我都找不到。</p>
+<p>对于手机系统的研究止步于4.4.4版本，现在起步都是4+64；4+32，优化也不错了，再玩xp，面具的黑科技感觉没有多大的意义。在我左右为难的时候，想到了刷机这个遥远的词汇，还没有玩过原生安卓，有点小激动呢！打开百度搜索金立f100,出现了100b 100a 100l分类这么细的吗？再次搜索金立f100l,找不到任何合适的系统,在一个论坛居然有F系列的版块，感觉有希望了，再一看该板块暂无内容，这个手机好冷门。刷原生安卓连rom包都找不到。</p>
+<p>抱着一丝希望去金立官网看看有没有原来的系统，还能进去不错不错，点下载。emmm 在意料之中了。只能从其他乱七八糟的网站下载刷机包了，下载，直接满速，一个好的开始，flash_tool,连电脑，开USB调试，2000 years later  刚开始以为自己搞坏了吓死我了，进系统一看居然有万恶的360全家桶，还是不能卸载的那一种，在官网的预装软件里面根本没有360全家桶，这个刷机包居然自称原版，ヽ(￣▽￣)ﾉ 是我菜了</p>
+<p>打开百度搜索下载一个某某宝，看样子还行。OMG 无广告无插件纯净版9.9¥  额 改文件，做软件，运营可以理解，那我下载一个免费原版的好了，肯定要比上一个要好吧。连电脑，按开机键 音量键，终于好了，(ﾉ´▽｀)ﾉ♪手机管家， 搜狗搜索，今日头条极速版，360安全卫士、360清理大师、360手机助手，好看视频，搜狗浏览器，搜狐新闻，还有几个已经删了忘了是什么，非常感谢这些预装的应用为我节省了500mb的流量，和下载安装的等待时间，可见某某宝非常注重用户的使用体验，让用户的手机处于安全的状态煞费苦心，为了让用户充分感受到互联网带来的便利和时时刻刻了解重要新闻，在对通知的推送方面不遗余力，又为了防止我这个菜鸟误删又贴心的将几个普通应用变成系统应用，拥有这次圆满的刷机路程，对某某宝的好感大增！！！</p>
+<p>调侃归调侃，这个某某宝还是不错的。 对于内置应用下面会有分析</p>
+<p>巧妇难为无米之炊 吃现成的要交智商税，解包的软件打开直接闪退，或者用linux或者开虚拟机，但条件不允许。想在短期自定义一个ROM在变成了不可能。</p>
+<p>在遗憾之际，又搜索rec无命令，找到了解决方法，按住开机键再按一下音量加就会显示recovery的选项，但是就算可以用rec也没有什么用。必须刷入第三方的rec才能刷第三方的ROM，想刷入第三方的rec又需要root。整理一下思路，发现只能线刷才行（卡刷没有第三方的rec估计不行，再加上没有内存卡，不想用adb）咦？？可不可以自己卡刷包改线刷包</p>
+<p>1分钟后现实将我的幻想无情的蹂躏蹂躏了，可以改但你不行。无奈混迹各个论坛，发现了改rom的软件，下载解压安装闪退一气呵成，噢，我的老伙计，这是怎么回事？去下载一个官网的软件修去修改最开始下载线刷包中的<code>system.img</code> <code>userdata.img</code>把万恶的流氓软件去掉，手机连上电脑开刷，(≧∀≦)♪终于可以删掉360手机助手了,为什么多了一个360安全卫士还是删不掉的，赶紧打开<code>system.img</code> <code>userdata.img</code>检查，原来是这个修改软件的推广，想去掉推广要5¥，但是加上推广还会返利，如此推断某某宝的行为也可以解释了。用最古老而简单的物理方法<del>拔网线</del>我终于得到了自己想要的线刷包，去掉除短信，通话之类的所有应用，换上乐桌面，用mx代替视频播放器，再加上地表最强音乐播放器，用via换掉金立浏览器，摄像机就扫描一个二维码也懒得换了，毕竟就1g运存。</p>
+<p>这么简单粗暴的修改，也出现了一系列的小问题，比如不能直接在相册内换壁纸，要借助其他软件；有些设置没法用等等。但是对我来说没有什么影响，毕竟精简出来1g多的空间。开机可用内存有470mb比原来的320mb好多了，想来折腾这么多还是没能体验到原生安卓。(T ^ T) </p>
+<p>看到广告推广如此现状，不禁思考到底谁赚了谁什么东西？？？20世纪最大的骗局，个人感觉钻石广告有的一拼。推广的软件大多都是大厂出品比如3某0，某度，某狐，某某等等。古人曾云：无利不起早，那么是谁呢？把经费出到产品的研发上带来的好处难道远比不上大力以这种推广吗？希望国产软件的水平不受限于开源的多少</p>
+]]></content>
+      <categories>
+        <category>手机</category>
+      </categories>
+      <tags>
+        <tag>手机</tag>
+        <tag>系统</tag>
+        <tag>杂记</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>无聊感想</title>
+    <url>/posts/1c2e/</url>
+    <content><![CDATA[<p><span class="heimu" title="你知道的太多了">1111111111</span></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>hexo搭建博客</title>
+    <url>/posts/b37651/</url>
+    <content><![CDATA[<p>以前就想自己建一个博客，一直没有时间，就推到了报名结束，从各种网站上学习，建成了自己的博客就记录一下整个过程顺便熟悉一下markdown的语法。于2019-8-1使用win7下面就是一点都不简洁的教程↓（个人编辑难免疏漏如果发现错误请指正Thanks♪(･ω･)ﾉ）</p>
+<a id="more"></a>
+<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><ol>
+<li>安装<a href="https://git-scm.com/downloads" target="_blank" rel="noopener">Git</a>需下载适合系统的版本<a href="https://github.com/waylau/git-for-win" target="_blank" rel="noopener">镜像地址</a></li>
+<li>安装<a href="http://nodejs.cn/download/" target="_blank" rel="noopener">nodejs</a>需下载适合系统的版本<del>建议下载最新版本</del></li>
+<li>安装<a href="https://visualstudio.microsoft.com/zh-hans/downloads/" target="_blank" rel="noopener">Visual</a>编辑器用来修改配置文件</li>
+<li>打开Git 输入<code>$ node -v</code>和<code>npm -v</code>或者打开cmd输入<code>noed -v</code>和<code>npm -v</code>如果有版本号则说明安装成功</li>
+<li>注册<a href="https://github.com/join/" target="_blank" rel="noopener">github</a>请牢记用户名推荐使用<a href="https://www.coolapk.com/apk/com.wei.account" target="_blank" rel="noopener">账号本子</a></li>
+<li>进入<a href="https://github.com/" target="_blank" rel="noopener">github</a>创建一个仓库并将仓库命名为：用户名.github.io在此仓库内点击create new files输入index.html 在文本框中输入<code>&lt;h1&gt; 测试 &lt;/h1&gt;</code><del>谷歌浏览器请关闭自动翻译不然自闭</del>然后点击提交，在浏览器是输入:用户名.github.io 如果可以看到测试两字就证明成功！</li>
+</ol>
+<h2 id="建议步骤"><a href="#建议步骤" class="headerlink" title="建议步骤"></a>建议步骤</h2><ol>
+<li>因为国内网络问题会造成下载缓慢建议使用淘宝的源</li>
+<li>cmd<code>npm config set registry https://registry.npm.taobao.org/</code></li>
+<li>输入<code>npm config get registry</code>检查是否成功</li>
+<li>不想用可以换回去<code>npm config set registry http://www.npmjs.org</code></li>
+</ol>
+<h2 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装hexo</h2><ol>
+<li>建议新建一个文件夹用于保存hexo如新建文件夹名字为hexo在F盘</li>
+<li>win+R输入cmd回车即可，或者按着shift键右击文件夹选择在此处打开power shell</li>
+<li>用cmd依次输入hexo文件夹所在的盘符如<code>F:</code> <code>cd hexo</code> <code>npm install hexo-cli -g</code>完成后输入<code>hexo init blog</code>进行初始，之后输入<code>cd blog</code> <code>npm install</code>完成后，进入blog目录下右击空白处选择Git Bash Here打开，输入<code>hexo g</code> <code>hexo s</code>启动博客后在浏览器内输入localhost:4000 如果可以看到hexo的界面则证明成功</li>
+<li>还可以使用<code>hexo s -p自定义端口</code> 在浏览器内输入localhost:自定义端口 ctrl+c可关闭本地预览，在预览时请不要关闭Git Bash</li>
+<li><a href="https://hexo.io/zh-cn/" target="_blank" rel="noopener">HEXO官网</a></li>
+</ol>
+<h2 id="配置SSH密匙"><a href="#配置SSH密匙" class="headerlink" title="配置SSH密匙"></a>配置SSH密匙</h2><ol>
+<li>在桌面空白处右击选择Git Bash Here输入<code>ssh-keygen -t rsa -C 注册github时使用的邮箱</code>提示输入passphrase时可直接回车，如果输入，请牢记密码</li>
+<li>用记事本或者<a href="https://visualstudio.microsoft.com/zh-hans/downloads/" target="_blank" rel="noopener">Visual</a>打开id_rsa.pub复制内容文件在<code>C:\Users\Administrator.ssh</code>目录下，如果实在找不到id_rsa.pub推荐使用<a href="http://ys-f.ys168.com/19853057/VJgXjJk36643M4L4H6Pucv/Everything%20V1.2.1.371%20%E7%BB%BF%E8%89%B2%E4%B8%AD%E6%96%87%E7%89%88.rar" target="_blank" rel="noopener">everything</a></li>
+<li>进入<a href="https://github.com/" target="_blank" rel="noopener">github</a>登录点击头像→Settings→SSH and GPG keys→New SSH key→在Title中输入hexo博客在key的文本框中输入复制的内容→Add SSH key</li>
+<li>在Git Bash中输入<code>ssh -T git@github.com</code>出现Hi 用户名! You’ve successfully authenticated, but GitHub does not provide shell access.则证明成功！</li>
+</ol>
+<h2 id="博客部署到Github"><a href="#博客部署到Github" class="headerlink" title="博客部署到Github"></a>博客部署到Github</h2><p>1.在blog打开git依次输入</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git config --global user.email &quot;注册github时使用的邮箱&quot;</span><br><span class="line">git config --global user.name &quot;github的用户名&quot;</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>打开cmd进入blog输入<code>npm install hexo-deployer-git --save</code></li>
+<li>打开_config.yml找到<code>url: https://用户名.github.io</code>进行修改<br>补全如下代码 repo即你的仓库https地址<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">deploy:</span><br><span class="line"> type: git</span><br><span class="line"> repo: https:&#x2F;&#x2F;用户名.com&#x2F;用户名&#x2F;用户名.github.io.git</span><br><span class="line"> branch: master</span><br></pre></td></tr></table></figure></li>
+<li><code>hexo g</code>生成博客 <code>hexo d</code>部署博客 输入Github账号密码等待即可</li>
+<li>浏览器输入：用户名.github.io进行验证<del>有可能会有延迟等待即可</del></li>
+</ol>
+<h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><ul>
+<li>在安装hexo,初始化hexo时，会因为网络环境等问题造成进行缓慢。一般情况等待即可，有能力的可以挂代理解决。</li>
+<li>blog只是为了方便记忆，可自行设置文件夹名字</li>
+<li>使用visual只是习惯，还可以用sublime text3</li>
+<li>cmd和powershell的在使用上几乎没有区别，可自行百度</li>
+</ul>
+]]></content>
+      <categories>
+        <category>博客</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>学习的最好途径</title>
+    <url>/posts/9c0ce61a/</url>
+    <content><![CDATA[<p>在人类出现到人类形成社会历经了多少岁月是学者研究的问题，我目光短浅不会从那么久远的时间来思考，因为经验告诉我我的一生不过如烟云消散。我的未来我会考虑，至于人类乃至地球宇宙会如何，我以前想了很多，感觉就像是毫无意义。看待一个事物要从事物所处的水平去观察，正如量筒测量俯视仰视都会造成偏差。</p>
+<a id="more"></a>
+
+<p>感觉话题稍微有点偏离最开始的主题了</p>
+<ul>
+<li>在上个世纪我国的各个领域都处在新生地位，美国等国家对中国实行技术封锁，但是我们喊出了：“越封锁，越强大”的口号</li>
+<li>大禹从鲧治水的失败中汲取教训，改变了”堵”的办法，对洪水进行疏导，最终获得了胜利</li>
+</ul>
+<h2 id="为什么"><a href="#为什么" class="headerlink" title="为什么"></a>为什么</h2><p>在回忆最开始的记忆时，我第一个想到的是家里的大院子和中间的一颗枣树、一颗柿子树，以及在院子晃悠逗狗玩日子。然后就是被黑猫警长里面食猴鹰所支配的恐惧，但是我看的第一个动漫作品肯定是百变小樱，那个一直都是小小的小可在变身成为封印之兽之后强烈反差的场景我现在依然记得非常清楚，原来可以这么帅。对于剧情只知道一个泳池o(￣ε￣*) ，然后就是小樱的魔法杖从一个鸟头的样子变成一个星星以及变身的样子</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">隐藏着黑暗力量的钥匙啊</span><br><span class="line">在我面前显示你真正的力量</span><br><span class="line">跟你定下约定的小樱</span><br><span class="line">命令你</span><br><span class="line">封印解除！</span><br></pre></td></tr></table></figure>
+<p>再然后就是迪迦奥特曼、神厨小福贵、瑶玲啊瑶玲、虹猫蓝兔七侠传、四驱兄弟、柯南、阿童木、七龙珠等等当然还有记忆尤深的橡胶国际，小鲤鱼跳龙门、葫芦娃、天书奇谈、中华小子、邋遢大王奇遇记、舒克和贝塔、圣斗士、变形金刚、神兵小将、蹴鞠小子、蓝猫龙骑团、围棋少年、秦时明月、百变机兽之洛洛历险记、星猫历险记、猪猪侠、喜羊羊与灰太狼、孔子、马丁的早晨、淘气包马小跳、大耳朵图图、福娃、成龙历险记、星际宝贝、天上掉下个猪八戒、电击小子、海绵宝宝、小牛向前冲、神兽金刚、超兽武装、多啦A梦、猫和老鼠、十二生肖、托马斯和朋友们、数码宝贝、神奇宝贝、晶码战士、大头儿子小头爸爸、福五鼠之孙子兵法、哪吒传奇、哈皮父子、小樱桃、海宝来了、果宝特攻、聪明的一休、蜘蛛侠、西游记、加菲猫的幸福生活、太空历险记、小羊肖恩、小鸡不好惹</p>
+<hr>
+<p>一开始回忆差点停不下来，还有几个找不到名字的原来我已经看过这么多了有点意外。但是完整了解的只有几个<del>好想看秦时明月啊啊啊</del>所以导致大部分出现了记忆混乱，不说了不说了。这些都是在电视上看到的，只是每天有什么就看什么，信息的传递一点都不自由，没有选择的权利只有拒绝的权利，对当时来说是不可能拒绝的。除了上面这些也看过不少的古装剧和抗日剧，中午看看今日说法，晚上看看打鱼晒网，都市报道。对于汉化公寓不想评论什么。<br>对于电脑就是玩玩qq或者4399从没有想到用电脑做点什么，突然人们都在讨论东京喰种。</p>
+<h2 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h2><p>问了才知道不是在电视上面的，而是一个日本漫画就没有在意。后来看了一集感觉不错，真香。中间电脑坏过一次找人40¥重装系统，直接从xp变成了win7感觉非常神奇，为了不再交智商税，疯狂百度怎么装系统买一个U盘改成启动盘以备不时之需，后来在用分区助手翻车时起到了关键作用。然后进击的巨人横空出世，下面插播一条紧急通知</p>
+<blockquote>
+<p>2015年3月31日，中华人民共和国文化部下达查处名单，对中国大陆境内主要的视频网站，以“涉嫌提供含有诱导未成年人违法犯罪和渲染暴力、色情、恐怖活动的网络动漫”为由，对其进行代理发行的动画予以严厉查处，直接使得大量日本新进动画被强制下架</p>
+</blockquote>
+<p>WTF？？便开启了下bt和网盘轮流交替的看巨人的新时代，开始粗略了解一下bt的原理。大致统计一下我学习了那些技能</p>
+<ul>
+<li>熟练用百度、迅雷、bt站、360百度115城通云盘</li>
+<li>对电脑bios有了较为清楚的认识，对cmd有了一点了解</li>
+<li>经常下载单机修改器，学会完美避开捆绑</li>
+<li>熟练操作路由器和wifi的设置</li>
+<li>root和xp框架，云刷机玩家</li>
+</ul>
+<h2 id="进程"><a href="#进程" class="headerlink" title="进程"></a>进程</h2><p>对于这些东西过于复杂，不想加以感情的描述，就尽量客观的记录一下<br>在一个更为遥远的年代，当我还在看喜羊羊的时候，一群人已经有组织的默默开始了汉化工作，那时网速很慢但没有GFW,都是后话了。  </p>
+<p>对于我来说仙剑奇侠传之后的奇幻电视剧都没有兴趣，国内综艺正值跑男大火看第一季还不错再看就难受，对了那个时候暴走大事件还在，然后让我看熊出没吗？看了第六神座、龙族、斗破苍穹，斗罗大陆，神御王座，光之子等等感觉不是我想要的，从福尔摩斯读到东野圭吾的小说、海子的诗、平凡的世界、白鹿原、活着、三体、球形闪电、霍乱时期的爱情、反乌托邦三部曲、瓦尔登湖、基督山伯爵、简爱、莎士比亚全集、摆渡人、追风筝的人等等大约90多本书其中有一些冷门的书就不一一提了，普通的网络小说看了并不对我现在的胃口。电视上没有好看的就刷漫威 DC的电影，哈利波特、怦然心动、阿甘正传、楚门的世界、霸王别姬、功夫、星爷的电影、未来警察、机器管家等等。听说有什么好看就去看什么前期主要是科幻、动作、搞笑之类的，在看完怦然心动之后就去找类似的比如肖申克的救赎、沉默的羔羊、电锯惊魂、泰坦尼克号这一类讲述人与人之间的故事。上述都是进8年来的一些简单描述，这些或许和ACGN没什么关系，但我相信一切都不会是无缘无故的。</p>
+<p>东京喰种，进击的巨人，To love,Re:从零开始的异世界,暗杀教室，缘之空，物语系列慢慢的刷完了190多部动漫。我不喜欢问题儿童都来自异世界，带着智能手机闯荡异世界，爆肝工程师异世界狂想曲这一类也是有迹可循的，最强的画师加上最强的cv阵容有可能会让我短暂忽略掉这种网文的模式勉强看下去。我是个喜欢看故事的人，物语系列是我可以打满星的作品，我只想读故事画风对我来说无所谓。</p>
+<h2 id="Galgame"><a href="#Galgame" class="headerlink" title="Galgame"></a>Galgame</h2><ul>
+<li>我喜欢好看的图片，不单指二次元的，只要是好看的就行</li>
+<li>我喜欢好听的音乐，不挑风格，不挑国家，男女通吃，虚拟歌姬除外（因为我听不到感情）</li>
+<li>我喜欢有趣的故事，不在意类型，纯理论的书也非常喜欢</li>
+</ul>
+<p>那么有没有什么东西可以同时满足以上三点</p>
+<h2 id="分类归档"><a href="#分类归档" class="headerlink" title="分类归档"></a>分类归档</h2><p>我最终还是患病了，这个病不好治。</p>
+<blockquote>
+<p>“松鼠症”,学名叫强迫性囤积症,是指喜欢囤积、收藏、购买一切“某天可能会用上”的东西,从中获得极大的满足感,哪怕这些东西基本不怎么使用,甚至严重影响到生活</p>
+</blockquote>
+<p>1280×720的视频能用吗？？？直接全换成1920×1080</p>
+<p>11G的小说 我不看但必须要有</p>
+<p>某某老师出新的了 先下载再说</p>
+<p>合集出来了  GKD</p>
+<p>图包要么？ 要 <del>已经有3万多张了</del></p>
+<p>为了满足以上要求 已掌握的技能</p>
+<ul>
+<li>精通各个下载工具</li>
+<li>充分了解公网和内网，端口，域名</li>
+<li>熟练打破GFW</li>
+<li>对MKV文件会解包，加字幕，加音轨等等</li>
+<li>VisiPics分辨图片，简单的ps修复，waifu2x-caffe的使用</li>
+<li>对7z的使用熟练</li>
+<li>对office有一定的经验</li>
+<li>收集多个软件，apk</li>
+</ul>
+<h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><p>我是谁？</p>
+<blockquote>
+<p>一个还活着的人</p>
+</blockquote>
+<p>我来自哪里？</p>
+<blockquote>
+<p>一个延续很久的种族</p>
+</blockquote>
+<p>我要干什么？</p>
+<blockquote>
+<p>带着梦想活下去</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>随笔</category>
+      </categories>
+      <tags>
+        <tag>ACGN</tag>
+      </tags>
+  </entry>
+</search>
